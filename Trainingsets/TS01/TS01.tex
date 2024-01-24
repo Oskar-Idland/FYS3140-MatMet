@@ -1,0 +1,237 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{titlesec}
+\usepackage[mathletters]{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[margin=1.5in]{geometry}
+\usepackage{enumerate}
+\newtheorem{theorem}{Theorem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\setlength{\parindent}{0cm}
+\usepackage{graphics}
+\usepackage{graphicx} % Required for including images
+\usepackage{subcaption}
+\usepackage{bigintcalc}
+\usepackage{pythonhighlight} %for pythonkode \begin{python}   \end{python}
+\usepackage{appendix}
+\usepackage{arydshln}
+\usepackage{physics}
+\usepackage{booktabs} 
+\usepackage{adjustbox}
+\usepackage{mdframed}
+\usepackage{relsize}
+\usepackage{physics}
+\usepackage[thinc]{esdiff}
+\usepackage{esint}  %for lukket-linje-integral
+\usepackage{xfrac} %for sfrac
+\usepackage{hyperref} %for linker, må ha med hypersetup
+\usepackage[noabbrev, nameinlink]{cleveref} % to be loaded after hyperref
+\usepackage{amssymb} %\mathbb{R} for reelle tall, \mathcal{B} for "matte"-font
+\usepackage{listings} %for kode/lstlisting
+\usepackage{verbatim}
+\usepackage{graphicx,wrapfig,lipsum,caption} %for wrapping av bilder
+\usepackage{mathtools} %for \abs{x}
+\usepackage[english]{babel}
+\usepackage{cancel}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+\author{Oskar Idland}
+\title{Training Set 1}
+\date{}
+\begin{document}
+\maketitle
+%\tableofcontents
+\newpage
+
+\section*{Problem T1.1}
+\subsection*{a)}
+\[
+x = r \cos θ \quad y = r \sin θ \quad
+\]
+\[
+r = \sqrt{2} \quad , \quad  θ = \frac{5π}{4}
+\]
+\[
+x = \sqrt{2} \cos \frac{5π}{4} = -1 \quad , \quad y = \sqrt{2} \sin \frac{5π}{4} = -1
+\]
+\[
+\underline{\underline{z = -1 - i}}
+\]
+ 
+\subsection*{b)}
+\[
+r = \sqrt{x^2 + y^2} \quad , \quad θ = \arctan \frac{y}{x}
+\]
+\[
+r = \sqrt{3 + 1} = 2 \quad , \quad  θ = \arctan \frac{1}{\sqrt{3}} = -\frac{π}{6}
+\]
+\[
+\frac{(1+i)^{48}}{(\sqrt{3}-i)^{25}} = \frac{\left(\sqrt{2}e^{iπ/4}\right)^{48}}{\left(2e^{-iπ / 6}\right)^{25}} = 2^{24 - 25} e^{iπ(12 + 25 / 6)} = \frac{1}{2} e^{iπ(12 + 25 / 6)} 
+\]
+\[
+x = \frac{1}{2} \cos (π(12 + 25 / 6))
+\]
+\[
+y = \frac{1}{2} \sin (π(12 + 25 / 6))
+\]
+\[
+\underline{\underline{z = \frac{1}{2} \cos (π(12 + 25 / 6)) + i \frac{1}{2} \sin (π(12 + 25 / 6))}}
+\]
+
+\subsection*{c)}
+\[
+\frac{e^{1+3πi}}{e^{-1 + iπ / 2}} = e^{1 -(-1) + 3πi - iπ / 2} = e^{2 + 5πi / 2} = e^2 e^{i5π / 2} = e^2 e^{iπ / 2}
+\]
+\[
+x = 0 \quad , \quad  y = 1 ⇒ \underline{\underline{z = ie^2}}
+\]
+
+\subsection*{d)}
+\[
+x = -8 \quad , \quad  y = 8\sqrt{3}
+\]
+\[
+r = \sqrt{64 + 192} = 16 \quad , \quad  θ = \arctan \frac{\sqrt{3}}{-1} = \frac{2π}{3}
+\]
+\[
+z = (8i\sqrt{3} - 8)^{1 / 4} = \left(16 e^{i2π / 3}\right)^{1 / 4} = 2e^{iπ / 6} 
+\]
+\[
+w_0 = 2e^{iπ / 6} \quad , \quad   w_1 = 2e^{i(π / 6 + 2π / 4)} = 2e^{i(π / 6 + π / 2)} = 2e^{i 2π / 3}
+\]
+\[
+w_2 = 2e^{iπ(1 / 6 + 2/2)} = 2e^{iπ 7 / 6} \quad , \quad  w_3 = 2e^{iπ (1 / 6 + 3 / 2)} = 2e^{iπ 5 / 3}
+\]
+
+\subsection*{e)}
+\[
+z = 8 = 8e^{i0} 
+\]
+\[
+z^{1 / 3} = w_0 = 8^{1 / 3} = 2 \quad , w_1 = 2e^{i2π / 3} \quad , w_2 = 2e^{-i2π / 3}
+\]
+\[
+∑_{i=0}^{2} w_i = 2 + 2e^{i2π / 3} + 2e^{-i2π / 3} = 2 + 2\left(\cos \frac{2π}{3} + i \sin \frac{2π}{3}\right) + 2\left(\cos \frac{2π}{3} - i \sin \frac{2π}{3}\right) 
+\]
+\[
+2 + 4 \cos 2π / 3 = 2 + 4 \left(-\frac{1}{2}\right) = 0
+\]
+After finding one root we rotate around the unit circle by $2π / n$. If $n$ is even then for each root with argument $θ$ there is another root with argument $-θ$. As the angles cancel out, the sum of the numbers below the real axis will be some negative number $-a$, and the numbers above will be $a$. The sum of all the roots will then be $0$. 
+
+
+\subsection*{f)}
+\[
+z = i = e^{iπ / 2}
+\]
+\[
+z^{1 / 3} = w_0 = e^{iπ / 6}, \quad w_1 = e^{iπ (1 / 6 + 2 / 3)} = e^{iπ 5 / 6}, \quad w_2 = e^{iπ (1 / 6 + 4 / 3)} = e^{- iπ 3 / 2}
+\]
+
+\subsection*{g)}
+\[
+z = 2 + 2\sqrt{3}i = 4e^{iπ / 3}
+\]
+\[
+w = \sqrt{z} = 2e^{iπ / 6}
+\]
+\[
+\sqrt{w} = w_0 = \sqrt{2}e^{i π / 12} \quad , w_1 = \sqrt{2}e^{i 13π / 12} = \sqrt{2}e^{- i 11π / 12}
+\]
+\[
+w_0 = \sqrt{2}e^{i π / 12} = \sqrt{2} \left(\cos π / 12 + i\sin π / 12\right)
+\]
+\[
+w_1 = \sqrt{2}e^{-i 11π / 12} = \sqrt{2} \left(\cos (-11π / 12) + i \sin \left(-11 π / 12\right)\right)
+\]
+Cosine values at 180 degrees are each other negative. Sine values at 180 degrees are also each other negative. 
+\[
+w_0 + w_1 = \sqrt{2} \left(0.966 - 0.966 +  i(0.259 - 0.259)\right) = 0
+\]
+
+\section*{Problem T1.2}
+\subsection*{a)}
+Applying the convergence test:
+\[
+\lim_{n \to ∞} \left|\frac{a_{n+1}}{n}\right| < 1
+\]
+\[
+\lim_{n \to ∞} \left|\frac{(n+1)(n+2)(z-2i)^{n+1}}{n(n+1)(z-2i)^{n}}\right| < 1
+\]
+\[
+\lim_{n \to ∞} \left|\frac{(n+2) (z - 2i)}{n}\right| < 1
+\]
+$(n+2) / n$ is always positive and converges to $1$. 
+\[
+\left|z - 2i\right| < 1
+\]
+$z$ represent a point in the complex plane and $2i$ is an offset from the origin. The inequality represents a circle with radius $1$ centered at $(0, 2i)$
+
+\subsection*{b)}
+\[
+e^{z} = \sum_{n=0}^{\infty} \frac{z^n}{n!}
+\]
+We apply the convergence test: 
+\[
+\lim_{n \to ∞} \left|\frac{a_{n+1}}{a_n}\right| < 1
+\]
+\[
+\lim_{n \to ∞} \left|\frac{n! z^{n+1}}{(n+1)! z^{n}}\right| 
+\]
+\[
+\lim_{n \to ∞} \left|\frac{z}{n}\right| = 0 < 1 
+\]
+This holds true for all $z$ in the complex plane. 
+
+
+\section*{Problem T1.3}
+\subsection*{a)}
+Substituting $\sin z$ with $(e^{iz} - e^{-iz} / 2i)$ and $\cos z$ with $(e^{iz} + e^{-iz} / 2)$:
+\[
+2 \sin z \cos z = \frac{1}{2} \left((-e^{iz} + e^{-iz})  (e^{iz} + e^{-iz})\right) = \frac{1}{2} \left(-e^{2iz} -1 + 1 + e^{-2iz}\right)
+\]
+\[
+\underline{\underline{\frac{e^{-2iz} - e^{-2iz}}{2} = \sin 2z}}
+\]
+
+\subsection*{b)}
+Substituting $\sinh z$ with $(e^{z} - e^{-z} / 2)$ and $\cosh z$ with $(e^{z} + e^{-z} / 2)$:
+\[
+\cosh^2 z - \sinh^2 z = \left(\frac{e^{z} + e^{-z}}{2}\right)^2 - \left(\frac{e^{z} - e^{-z}}{2}\right)^2 = \frac{e^{2z} + 2 + e^{-2z}}{4} - \frac{e^{2z} - 2 + e^{-2z}}{4} = 1
+\]
+
+\subsection*{c)}
+\[
+e^{z} = ∑_{n=0}^{∞} \frac{z^{n}}{n!}
+\]
+\[
+e^{1+iπ} = ∑_{n=0}^{∞} \frac{(1 + iπ)^{n}}{n!}
+\]
+\[
+\underline{\underline{e^{1 + iπ} = e ⋅ -1 = -e}}
+\]
+
+\end{document}
