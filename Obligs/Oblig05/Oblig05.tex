@@ -1,0 +1,155 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{titlesec}
+\usepackage[mathletters]{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[margin=1.5in]{geometry}
+\usepackage{enumerate}
+\newtheorem{theorem}{Theorem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\setlength{\parindent}{0cm}
+\usepackage{graphics}
+\usepackage{graphicx} % Required for including images
+\usepackage{subcaption}
+\usepackage{bigintcalc}
+\usepackage{pythonhighlight} %for pythonkode \begin{python}   \end{python}
+\usepackage{appendix}
+\usepackage{arydshln}
+\usepackage{physics}
+\usepackage{booktabs} 
+\usepackage{adjustbox}
+\usepackage{mdframed}
+\usepackage{relsize}
+\usepackage{physics}
+\usepackage[thinc]{esdiff}
+\usepackage{esint}  %for lukket-linje-integral
+\usepackage{xfrac} %for sfrac
+\usepackage{hyperref} %for linker, må ha med hypersetup
+\usepackage[noabbrev, nameinlink]{cleveref} % to be loaded after hyperref
+\usepackage{amssymb} %\mathbb{R} for reelle tall, \mathcal{B} for "matte"-font
+\usepackage{listings} %for kode/lstlisting
+\usepackage{verbatim}
+\usepackage{graphicx,wrapfig,lipsum,caption} %for wrapping av bilder
+\usepackage{mathtools} %for \abs{x}
+\usepackage[english]{babel}
+\usepackage{cancel}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+\author{Oskar Idland}
+\title{Oblig 5}
+\date{}
+\begin{document}
+\maketitle
+%\tableofcontents
+\newpage
+\section*{Problem 1}
+\subsection*{a)}
+\[
+I = ∫_{-∞}^{∞} \frac{x+3}{x^{4} + 1} \ \mathrm{d}x
+\]
+We rewrite this to a complex integral along a semicircle path in the upper half-plane with radius $R$. 
+\[
+∮_{C} \frac{z+3}{z^{4} + 1} \ \mathrm{d}z
+\]
+This we can evaluate using the residue theorem. We have a fourth degree pole at $z_0 = -1$. The roots are $r_1 = e^{iπ/ 4}$, $r_2 = e^{3iπ/ 4}$, $r_3 = e^{5iπ/ 4}$ and $r_4 = e^{7iπ/ 4}$. We only use the roots in the upper half-plane, so we get $r_1$ and $r_2$. Now to find the residues at these poles.
+\[
+\operatorname{Res}(f, r_1) = \lim_{z \to r_1}
+\]
+
+
+
+
+\subsection*{b)}
+\[
+I = ∫_{0}^{∞} \frac{\cos x}{x^2 + 1} \ \mathrm{d}x
+\]
+We have a poles at $z = \pm i$. As the function is symmetric we use this to expand the integral to an infinite one. 
+\[
+I = \frac{1}{2} ∫_{-∞}^{∞} \frac{\cos x}{x^2 + 1} \ \mathrm{d}x = \frac{1}{2} ∮_{C} \frac{\cos z}{z^2 + 1} \ \mathrm{d}z
+\]
+\[
+2I = i 2π \operatorname{Res}(f, i)
+\]
+\[
+I = i π \cosh(1) / 2i = \frac{π}{2} \cosh(1)
+\]
+
+\subsection*{c)}
+\[
+I = ∫_{0}^{2π} \frac{\cos (2θ)}{\sin (θ) + 5} dθ
+\]
+We use that $z = e^{iθ}$ and $\frac{\mathrm{d}z}{\mathrm{d}θ}$ = $ie^{iθ}$, so $\mathrm{d}θ = \frac{\mathrm{d}z}{iz}$. 
+\[
+I = ∫_{C} \frac{\cos (2z)}{\sin (z) + 5} \frac{\mathrm{d}z}{iz}
+\]
+We only have a pole at 0. Again we use the residue theorem.
+\[
+I = i 2π \operatorname{Res}(f, 0) = i 2π \cos(0) / 5 = \frac{2π}{5}
+\]
+
+\subsection*{d)}
+\[
+I = ∫_{-∞}^{∞} \frac{(x-1) \sin (8x - 7)}{x^2 - 2x + 5} \ \mathrm{d}x
+\]
+First we find the roots of the denominator to be $r_1 = 1 + 2i$ and $r_2 = 1 - 2i$. 
+\[
+I = \frac{1}{1i} \left[ ∫_{-∞}^{∞} \frac{(x-1)e^{i(8x-7)}}{x^2 - 2x + 5} \ \mathrm{d}x  - ∫_{-∞}^{∞} \frac{(x-1)e^{-i(8x - 7)}}{x^2 - 2x + 5} \ \mathrm{d}x\right]
+\]
+\[
+I = \operatorname{Im} \left(∫_{-∞}^{∞} \frac{x-1}{x^2 - 2x + 5 e^{i(8x-7)}} \ \mathrm{d}x\right)
+\]
+Then rewrite the integral to a complex integral along a semicircle path in the upper half-plane with radius $R$.
+\[
+I = \operatorname{Im} \left(∮_{C} \frac{z-1}{z^2 - 2z + 5 e^{i(8z-7)}} \ \mathrm{d}z\right)
+\]
+I would then use the residue theorem to solve the integral, but I did not get the time. 
+\[
+I = \operatorname{Im} \left(π Res \left(f(x)\right)\right)
+\]
+
+\section*{Problem 2}
+\subsection*{a)}
+Laplace's equation is given by:
+\[
+∇^{2} f(x) = 0
+\]
+For complex functions, we have:
+\[
+∇^{2} f(z) = ∇^{2} (u(x, y) + iv(x, y)) = ∇^{2} u(x, y) + i∇^{2} v(x, y) 
+\]
+\[
+∇^{2} f(z) = ∂_{x}^{2} u + ∂_{y}^{2} u + i(∂_{x}^{2} v + ∂_{y}^{2} v) = 0
+\]
+We use the following relations: 
+\[
+\frac{∂u}{∂x} = \frac{∂v}{∂y} \quad , \quad  \frac{∂v}{∂x} = -\frac{∂u}{∂y}
+\]
+\[
+\underline{\underline{∇^{2} f(z) = ∂_x ∂_y v - ∂_y ∂_x v + i(∂_x ∂_y u - ∂_y ∂_x u) = 0}}
+\]
+
+\end{document}
